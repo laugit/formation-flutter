@@ -1,0 +1,93 @@
+import 'package:flutter/material.dart';
+
+class Rectangle extends StatelessWidget {
+  const Rectangle({
+    required this.icon,
+    required this.text1,
+    required this.text2,
+    required this.color,
+    super.key
+  });
+
+  final Icon icon;
+  final String text1;
+  final String text2;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      margin: EdgeInsets.only(bottom: 18),
+      decoration: new BoxDecoration(
+        borderRadius: new BorderRadius.circular(16.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 0.2,
+            blurRadius: 7,
+            offset: Offset(0, 0.2), // changes position of shadow
+          ),
+        ],
+        color: Colors.white,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          CircleAvatar(
+            radius: 32,
+            backgroundColor: color,
+            child: CircleAvatar(
+                radius:30,
+                backgroundColor: Colors.white,
+                child: icon
+            ),
+          ),
+          Center(
+            child:Container(
+              width: 200,
+              height: 40,
+              child:Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        text1,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        text2,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFF84848A),
+                        ),
+                      ),
+                    ]
+                  )
+                ],
+              ),
+            )
+          ),
+          Icon(
+            Icons.add_sharp,
+            size: 42,
+            color: const Color(0xFF84848A),
+          ),
+        ],
+      )
+    );
+  }
+
+}
