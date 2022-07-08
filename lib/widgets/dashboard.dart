@@ -202,7 +202,7 @@ class Options extends StatelessWidget {
                 Rectangle(
                   icon:Icon(
                     Icons.shield_moon_outlined,
-                    size: 42,
+                    size: 38,
                     color: const Color(0xFF49106C),
                   ),
                   text1: "Portez votre Fitbit au lit",
@@ -212,7 +212,7 @@ class Options extends StatelessWidget {
                 Rectangle(
                     icon:Icon(
                       Icons.directions_run,
-                      size: 42,
+                      size: 38,
                       color: const Color(0xFFB75224),
                     ),
                     text1: "Suivez votre exercice",
@@ -236,6 +236,14 @@ class Footer extends StatelessWidget {
       height: 70,
       decoration: new BoxDecoration(
         color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFE1E1E1),
+            offset: Offset(0, -0.1),
+            blurRadius: 10.0,
+            spreadRadius: 0.0,
+          ),
+        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
